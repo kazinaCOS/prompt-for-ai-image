@@ -1,0 +1,4 @@
+const CACHE='prompt-app-v14';
+self.addEventListener('install',e=>e.waitUntil((async()=>{const c=await caches.open(CACHE);await Promise.allSettled(['./','./index.html','./theme.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'].map(u=>c.add(new Request(u,{cache:'reload'}))));await self.skipWaiting()})()));
+self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
+self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==self.location.origin)return;e.respondWith((async()=>{try{const response=await fetch(r,{cache:'no-cache'});if(response.ok){const c=await caches.open(CACHE);await c.put(r,response.clone())}return response}catch(error){const c=await caches.open(CACHE);const stored=await c.match(r);if(stored)return stored;if(r.mode==='navigate'){const page=await c.match('./index.html');if(page)return page}return Response.error()}})())});

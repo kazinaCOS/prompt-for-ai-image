@@ -1,0 +1,70 @@
+/* ОБЩАЯ ТЕМА: тёмная слива + розовые акценты. */
+:root {
+ color-scheme:dark;
+ --page-bg:#1b1125;
+ --surface:#291b34;
+ --field-bg:#211629;
+ --text:#f8edf5;
+ --muted:#cbb4cf;
+ --border:#73517f;
+ --field-border:#73517f;
+ --button-bg:#a63870;
+ --button-border:#c45b96;
+ --button-text:#ffffff;
+ --button-hover:#ba447f;
+ --hover:#ba447f;
+ --accent:#ffabd4;
+ --danger:#ffb3c4;
+ --status-bg:#35203f;
+ --focus:#f2a2d1;
+ --selection-bg:#743d73;
+ --selection-text:#ffffff;
+ --radius:18px;
+ --control-radius:12px;
+ --shadow:0 8px 26px rgba(8,3,14,.20);
+ --font:system-ui,-apple-system,"Segoe UI",sans-serif;
+ --width:1080px;
+ --content-width:1080px;
+ --page-background:linear-gradient(145deg,#21132d 0%,#2b1732 55%,#191222 100%);
+}
+html{min-height:100%;background:var(--page-bg)}
+body{background:var(--page-background);color:var(--text);font-family:var(--font);line-height:1.55}
+main{max-width:var(--content-width);padding:28px 22px 48px}
+h1{color:#ffc0e0;font-size:clamp(26px,4vw,34px);letter-spacing:-.025em;margin-bottom:8px}
+h2,h3{color:#f5b4dd}
+p,.hint{color:var(--muted)}
+#appVersion{display:inline-block;min-height:0;background:#422348;color:#f5c4e5;padding:6px 12px;border-radius:999px;font-size:12px}
+.projectbar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:20px 0 16px}
+.projectbar p{margin-bottom:4px}
+details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:18px 0}
+summary{color:#f5b4dd;font-size:19px;line-height:1.45;padding:3px 0}
+summary::marker{color:#ee90c5}
+.grid{gap:22px;margin-top:18px}
+label{color:#f2d4e9;font-weight:650}
+input[type=text],textarea{background:var(--field-bg);color:var(--text);border:1px solid var(--field-border);border-radius:var(--control-radius);font:16px var(--font);padding:12px 14px;line-height:1.55;box-shadow:inset 0 1px 3px rgba(0,0,0,.12)}
+textarea{min-height:122px}
+input::placeholder,textarea::placeholder{color:#baa0c2;opacity:1}
+input[type=text]:hover,textarea:hover{border-color:#a276af}
+input[type=text]:focus,textarea:focus{border-color:var(--focus);outline:2px solid rgba(242,162,209,.25);outline-offset:2px}
+button{background:var(--button-bg);color:var(--button-text);border:1px solid var(--button-border);border-radius:var(--control-radius);padding:10px 15px;min-height:44px;font:600 14px var(--font);line-height:1.4;box-shadow:0 3px 8px rgba(0,0,0,.15);transition:background .15s ease,box-shadow .15s ease}
+button:hover{background:var(--button-hover);border-color:#ed8cbe;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+button:active{box-shadow:none}
+button:disabled{opacity:.55;cursor:wait}
+button.danger{background:#432334;color:var(--danger);border-color:#aa647f;box-shadow:none}
+button.danger:hover{background:#582b43;border-color:#d18aa4}
+.fieldtools{gap:6px;margin:8px 0}
+.fieldtools button,.sectiontools button{background:#3b2848;color:#f1c9e5;border-color:#82608f;box-shadow:none}
+.fieldtools button:hover,.sectiontools button:hover{background:#50315e;border-color:#bb88ba}
+.fieldtools button{min-height:34px;font-size:12px;padding:6px 9px}
+.fieldtools button.danger,.sectiontools button.danger{color:var(--danger)}
+.sectiontools{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;padding-bottom:12px;border-bottom:1px solid #55385f}
+.sectiontools button{margin:0}
+#status{color:var(--accent);font-weight:600}
+.statusbar{background:var(--status-bg);color:var(--text)}
+#result{min-height:320px;border-color:#a16b9d;background:#24172e;color:var(--text)}
+#shareDetails{background:var(--surface)!important;border-color:var(--border)!important;color:var(--text);border-radius:var(--control-radius)}
+a{color:#ffabd4}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+::selection{background:var(--selection-bg);color:var(--selection-text)}
+@media(max-width:650px){main{padding:18px 12px 32px}.projectbar,details{padding:15px;border-radius:15px}.grid{grid-template-columns:1fr;gap:18px}button{margin:4px 3px;padding:10px 12px}.fieldtools button,.sectiontools button{margin:0}.hint{min-height:0}}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
